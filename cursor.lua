@@ -54,6 +54,15 @@ function u_cursor_control()
 --select option
 	if btnp(❎) then
 		sfx(1)
+		if cursr.state=="water" then
+			pet_stats.hp+=5
+		end
+		if cursr.state=="wash" then
+			pet_stats.cln+=5
+		end
+		if cursr.state=="talk" then
+			pet_stats.hap+=5
+		end
 	end
 
 end
