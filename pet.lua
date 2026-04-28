@@ -12,8 +12,11 @@ function ipet()
 	} --pet idle
 	
 	pet_stats = {
+	maxhp=38,
 	hp=38,
+	maxhap=38,
 	hap=38,
+	maxcln=38,
 	cln=38
 	}
 	
