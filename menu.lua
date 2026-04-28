@@ -30,26 +30,26 @@ end
 --update main menu
 function u_main_menu()
 	if menu.state=="wash" then
-		wash.sp=1
+		wash.sp=3
 		wash.y=39
 	else
-		wash.sp=17
+		wash.sp=19
 		wash.y=40
 	end
 	
 	if menu.state=="water" then
-		water.sp=2
+		water.sp=1
 		water.y=39
 	else
-		water.sp=18
+		water.sp=17
 		water.y=40
 	end
 	
 	if menu.state=="talk" then
-		talk.sp=3
+		talk.sp=2
 		talk.y=39
 	else
-		talk.sp=19
+		talk.sp=18
 		talk.y=40
 	end
 
