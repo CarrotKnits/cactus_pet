@@ -2,13 +2,13 @@
 
 --cursor control
 function i_cursor_control()
-	cursr={
-		tlx=7,
-		tly=38,
-		blx=16,
-		bly=47,
-		clr=7,
-		state="wash"
+	cursr = {
+		tlx = 7,
+		tly = 38,
+		blx = 16,
+		bly = 47,
+		clr = 7,
+		state = "wash"
 	}
 end
 
@@ -17,51 +17,66 @@ function u_cursor_control()
 --cursor response to button press ➡️
 	if btnp(➡️) then
 		sfx(0)
-		if cursr.state=="wash" then
-			cursr.state="water"
-		elseif cursr.state=="water" then
-			cursr.state="talk"
-		elseif cursr.state=="talk" then
-			cursr.state="wash"
+		if cursr.state == "wash" then
+			cursr.state = "water"
+		elseif cursr.state == "water" then
+			cursr.state = "talk"
+		elseif cursr.state == "talk" then
+			cursr.state = "wash"
 		end
 	end
 --cursor response to button press ⬅️
 	if btnp(⬅️) then
 		sfx(0)
-		if cursr.state=="wash" then
-			cursr.state="talk"
-		elseif cursr.state=="water" then
-			cursr.state="wash"
-		elseif cursr.state=="talk" then
-			cursr.state="water"
+		if cursr.state == "wash" then
+			cursr.state = "talk"
+		elseif cursr.state == "water" then
+			cursr.state = "wash"
+		elseif cursr.state == "talk" then
+			cursr.state = "water"
 		end
 	end
 	
 --change cursor state
-	if cursr.state=="wash" then
-		cursr.tlx=7
-		cursr.blx=16
-		menu.state="wash"
-	elseif cursr.state=="water" then
-		cursr.tlx=23
-		cursr.blx=32
-		menu.state="water"
-	elseif cursr.state=="talk" then
-		cursr.tlx=39
-		cursr.blx=48
-		menu.state="talk"
+	if cursr.state == "wash" then
+		cursr.tlx = 7
+		cursr.blx = 16
+		menu.state = "wash"
+	elseif cursr.state == "water" then
+		cursr.tlx = 23
+		cursr.blx = 32
+		menu.state = "water"
+	elseif cursr.state == "talk" then
+		cursr.tlx = 39
+		cursr.blx = 48
+		menu.state = "talk"
 	end
 --select option
 	if btnp(❎) then
 		sfx(1)
-		if cursr.state=="water" then
-			pet_stats.hp+=5
+		if cursr.state == "water" then
+			if pet_stats.hp < (pet_stats.maxhp - 5) then
+				pet_stats.hp += 5
+			--set heal limit
+			elseif pet_stats.hp < pet_stats.maxhp and pet_stats.hp > (pet_stats.maxhp - 5) then
+				pet_stats.hp = pet_stats.hp + (pet_stats.maxhp - pet_stats.hp)
+			end
 		end
-		if cursr.state=="wash" then
-			pet_stats.cln+=5
+		if cursr.state == "wash" then
+			if pet_stats.cln < (pet_stats.maxcln - 5) then
+				pet_stats.cln += 5
+			--set wash limit
+			elseif pet_stats.cln < pet_stats.maxcln and pet_stats.cln > (pet_stats.maxcln - 5) then
+				pet_stats.cln = pet_stats.cln + (pet_stats.maxcln - pet_stats.cln)
+			end
 		end
-		if cursr.state=="talk" then
-			pet_stats.hap+=5
+		if cursr.state == "talk" then
+			if pet_stats.hap < (pet_stats.maxhap - 5) then
+				pet_stats.hap += 5
+			--set talk limit
+			elseif pet_stats.hap < pet_stats.maxhap and pet_stats.hap > (pet_stats.maxhap - 5) then
+				pet_stats.hap = pet_stats.hap + (pet_stats.maxhap - pet_stats.hap)
+			end
 		end
 	end
 
@@ -69,5 +84,5 @@ end
 
 --draw 
 function d_cursor_control()
-	rect(cursr.tlx,cursr.tly,cursr.blx,cursr.bly,cursr.clr)
+	rect(cursr.tlx, cursr.tly, cursr.blx, cursr.bly, cursr.clr)
 end
