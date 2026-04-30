@@ -1,16 +1,18 @@
 --main program
 
 function _init()
-    music(3)
     ipet()
     i_hp_sts()
+    i_music()
     i_main_menu()
+    music(track)
     i_cursor_control()
 end
 
 function _update()
     upet()
     u_hp_sts()
+    u_music()
     u_main_menu()
     u_cursor_control()
 end
