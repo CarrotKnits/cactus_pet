@@ -12,12 +12,12 @@ function ipet()
 	} --pet idle
 	
 	pet_stats = {
-	maxhp = 38,
-	hp = 38,
-	maxhap = 38,
-	hap = 38,
-	maxcln = 38,
-	cln = 38
+	maxhp = 40,
+	hp = 40,
+	maxhap = 40,
+	hap = 40,
+	maxcln = 40,
+	cln = 40
 	}
 	
 end
@@ -25,17 +25,35 @@ end
 function upet()
 	--pet animation speed
 	pi.t += 0.05
-	--stat decay speeds, defaults 0.005
-	pet_stats.hp -= 0.1
-	pet_stats.hap -= 0.1
-	pet_stats.cln -= 0.1
+	--hp decay speed, defaults 0.005
+	if pet_stats.hp <= 0 then
+		pet_stats.hp = 0 --stops inner bar from growing to the left outside the outer bar when at 0
+	elseif hap.state == "happy" and cln.state == "clean" then
+		pet_stats.hp -= 0.005
+	elseif hap.state == "sad" or cln.state == "dirty" then
+		pet_stats.hp -= 0.015
+	elseif hap.state == "sad" and cln.state == "dirty" then
+		pet_stats.hp -= 0.03
+	end
+	--happiness decay speed: default 0.015
+	if pet_stats.hap <= 0 then
+		pet_stats.hap = 0 --stops inner bar from growing to the left outside the outer bar when at 0
+	elseif pet_stats.hap > 0 then
+		pet_stats.hap -= 0.06
+	end
+	--cleanliness decay speed: default 0.01
+	if pet_stats.cln <= 0 then
+		pet_stats.cln = 0 --stops inner bar from growing to the left outside the outer bar when at 0
+	elseif pet_stats.cln > 0 then
+		pet_stats.cln -= 0.04
+	end
 end
 
 function dpet()
 	--pet idle animation
-	sspr(48,5,5,3,pi.x,pi.y+5) --base
+	sspr(48, 5, 5, 3, pi.x, pi.y + 5) --base
 	local bob = sin(pi.t) * 1
-	sspr(40,0,8,7,pi.x,pi.y+bob) --top
+	sspr(40, 0, 8, 7, pi.x, pi.y + bob) --top
 	
 	--
 end    
