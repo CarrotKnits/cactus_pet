@@ -43,7 +43,7 @@ end
 
 function u_hp_sts()	
 --hp states
-	if pet_stats.cln >= mx_br_sz*85 then
+	if pet_stats.hp >= mx_br_sz*.85 then
 		hp.state = "max"
 	elseif pet_stats.hp <= mx_br_sz*.85 and pet_stats.hp > mx_br_sz*.7 then
 		hp.state = "healthy"
@@ -51,9 +51,9 @@ function u_hp_sts()
 		hp.state = "normal"
 	elseif pet_stats.hp <= mx_br_sz*.45 and pet_stats.hp > mx_br_sz*.25 then
 		hp.state = "weakening"
-	elseif pet_stats.hp <= mx_br_sz*25 and pet_stats.hp > mx_br_sz*15 then
+	elseif pet_stats.hp <= mx_br_sz*.25 and pet_stats.hp > mx_br_sz*.15 then
 		hp.state = "weak"
-	elseif pet_stats.hp <= mx_br_sz*15 and pet_stats.hp > 0 then
+	elseif pet_stats.hp <= mx_br_sz*.15 and pet_stats.hp > 0 then
 		hp.state = "dying"
 	elseif pet_stats.hp == 0 then
 		hp.state = "dead"
