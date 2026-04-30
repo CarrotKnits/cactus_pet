@@ -41,19 +41,19 @@ function i_hp_sts()
 	
 end
 
-function u_hp_sts()
+function u_hp_sts()	
 --hp states
-	if pet_stats.cln >= mx_br_sz*.9 then
+	if pet_stats.cln >= mx_br_sz*85 then
 		hp.state = "max"
-	elseif pet_stats.hp <= mx_br_sz*.75 and pet_stats.hp >= mx_br_sz*.5 then
+	elseif pet_stats.hp <= mx_br_sz*.85 and pet_stats.hp > mx_br_sz*.7 then
 		hp.state = "healthy"
-	elseif pet_stats.hp <= mx_br_sz*.5 and pet_stats.hp >= mx_br_sz*.4 then
+	elseif pet_stats.hp <= mx_br_sz*.7 and pet_stats.hp > mx_br_sz*.5 then
 		hp.state = "normal"
-	elseif pet_stats.hp <= mx_br_sz*.35 and pet_stats.hp >= mx_br_sz*.3 then
+	elseif pet_stats.hp <= mx_br_sz*.45 and pet_stats.hp > mx_br_sz*.25 then
 		hp.state = "weakening"
-	elseif pet_stats.hp <= mx_br_sz*.25 and pet_stats.hp >= mx_br_sz*.1 then
+	elseif pet_stats.hp <= mx_br_sz*25 and pet_stats.hp > mx_br_sz*15 then
 		hp.state = "weak"
-	elseif pet_stats.hp <= mx_br_sz*.1 and pet_stats.hp > 0 then
+	elseif pet_stats.hp <= mx_br_sz*15 and pet_stats.hp > 0 then
 		hp.state = "dying"
 	elseif pet_stats.hp == 0 then
 		hp.state = "dead"
@@ -80,13 +80,13 @@ function d_hp_sts()
 	rectfill(hp.tlx, hp.tly, hp.tlx + pet_stats.hp, hp.bly, hp.clr) --bar fill
 	rect(hp.tlx, hp.tly - 1, hp.blx, hp.bly + 1, 1) --bar border
 
---happiness: bug:happiness bar is cln bar, why??
+--happiness: bug:happiness draw code is actually the cln bar??
 	spr(hap.sp, hap.spx, hap.spy)
 	rectfill(hap.tlx, hap.tly, hap.blx, hap.bly, 2) --bar back empty
 	rectfill(hap.tlx, hap.tly, hap.tlx + pet_stats.hap, hap.bly, hap.clr) --bar fill
 	rect(hap.tlx, hap.tly - 1, hap.blx, hap.bly + 1, 1) --bar border
 
---cleanliness: bug:cln bar is happiness bar, why?? 
+--cleanliness: bug:cleanliness draw code is actually the happiness bar?? 
 	spr(cln.sp, cln.spx, cln.spy)
 	rectfill(cln.tlx, cln.tly, cln.blx, cln.bly, 2) --bar back empty
 	rectfill(cln.tlx, cln.tly, cln.tlx + pet_stats.cln, cln.bly, cln.clr) --bar fill
