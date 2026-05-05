@@ -20,10 +20,10 @@ function i_hp_sts()
 		spx = 3,
 		spy = 9,
 		tlx = 11,
-		tly = 18,
+		tly = 11,
 		blx = 51,
-		bly = 19,
-		clr = 12,
+		bly = 12,
+		clr = 11,
 		state = "happy"
 	}
 	
@@ -32,10 +32,10 @@ function i_hp_sts()
 		spx = 3,
 		spy = 17,
 		tlx = 11,
-		tly = 11,
+		tly = 18,
 		blx = 51,
-		bly = 12,
-		clr = 11,
+		bly = 19,
+		clr = 12,
 		state = "dirty"
 	}
 	
@@ -58,17 +58,27 @@ function u_hp_sts()
 	elseif pet_stats.hp == 0 then
 		hp.state = "dead"
 	end
+	--hp bar heart icon change
+	if hp.state == "dead" then
+		hp.sp = 50
+	else
+		hp.sp = 33
+	end
 --happiness states
 	if pet_stats.hap <= mx_br_sz/2 then
 		hap.state = "sad"
+		hap.sp = 35
 	else
 		hap.state = "happy"
+		hap.sp = 34
 	end
 --cleanliness states
 	if pet_stats.cln <= mx_br_sz/2 then
 		cln.state = "dirty"
+		cln.sp = 51
 	else
 		cln.state = "clean"
+		cln.sp = 49
 	end
 
 --sprite animation lookup
