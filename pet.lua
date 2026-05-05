@@ -3,7 +3,7 @@
 function ipet()
 	petx = 24
 	pety = 24
-	p_spr = 5
+	p_spr = 4
 	pi = {
 		sp = p_spr,
 		x = petx,
@@ -25,15 +25,15 @@ end
 function upet()
 	--pet animation speed
 	pi.t += 0.05
-	--hp decay speed, defaults 0.005, 0.015, 0.03; other values are for testing
+	--hp decay speed, defaults 0.005, 0.015, 0.3; other values are for testing
 	if pet_stats.hp <= 0 then
 		pet_stats.hp = 0 --stops inner bar from growing to the left outside the outer bar when at 0
 	elseif hap.state == "happy" and cln.state == "clean" then
-		pet_stats.hp -= 0.4
+		pet_stats.hp -= 0.01
 	elseif hap.state == "sad" or cln.state == "dirty" then
-		pet_stats.hp -= 0.4
+		pet_stats.hp -= 0.15
 	elseif hap.state == "sad" and cln.state == "dirty" then
-		pet_stats.hp -= 0.4
+		pet_stats.hp -= 0.3
 	end
 	--happiness decay speed: default 0.015
 	if pet_stats.hap <= 0 then
@@ -51,10 +51,7 @@ function upet()
 end
 
 function dpet()
-	--pet idle animation
-	sspr(48, 5, 5, 3, pi.x, pi.y + 5) --base
-	local bob = sin(pi.t) * 1
-	sspr(40, 0, 8, 7, pi.x, pi.y + bob) --top
+	spr(animation[pet_state_code][(flr(pi.t) % 2) + 1],24,24)
 	
-	--
+
 end    
