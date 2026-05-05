@@ -6,19 +6,25 @@ function i_main_menu()
 	wash = {
 		sp = 17,
 		x = 8,
-		y = 40
+		y = 40,
+		wash_cd = 150,
+		state = "ready"
 	}
 	
 	water = {
 		sp = 18,
 		x = 24,
-		y = 40
+		y = 40,
+		water_cd = 150,
+		state = "ready"
 	}
 	
 	talk={
 		sp = 19,
 		x = 40,
-		y = 40
+		y = 40,
+		talk_cd = 150,
+		state = "ready"
 	}
 	
 	menu = {
