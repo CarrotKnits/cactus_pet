@@ -3,6 +3,7 @@
 function _init()
     ipet()
     i_hp_sts()
+    i_ani()
     i_music()
     i_main_menu()
     music(track)
