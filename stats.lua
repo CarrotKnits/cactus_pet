@@ -71,6 +71,38 @@ function u_hp_sts()
 		cln.state = "clean"
 	end
 
+--sprite animation lookup
+	--hp state lookup
+	if hp.state == "max" then
+		hp_code = "m"
+	elseif hp.state == "healthy" then
+		hp_code = "h"
+	elseif hp.state == "normal" then
+		hp_code = "n"
+	elseif hp.state == "weakening" then
+		hp_code = "wn"
+	elseif hp.state == "weak" then
+		hp_code = "wk"
+	elseif hp.state == "dying" then
+		hp_code = "dy"
+	elseif hp.state == "dead" then
+		hp_code = "dd"
+	end
+	--cleanliness state lookup
+	if cln.state == "clean" then
+		cln_code = "c"
+	elseif cln.state == "dirty" then
+		cln_code = "d"
+	end
+	--happiness state lookup
+	if hap.state == "happy" then
+		hap_code = "h"
+	elseif hap.state == "sad" then
+		hap_code = "s"
+	end
+	--code for the combined states
+	pet_state_code = hp_code .. cln_code .. hap_code
+
 end
 
 function d_hp_sts()
