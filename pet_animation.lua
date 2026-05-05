@@ -39,7 +39,3 @@ function i_ani()
         ddds = {58,118},
     }
 end
-
-function u_ani()
-
-end
