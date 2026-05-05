@@ -14,7 +14,7 @@ function i_ani()
         hds = {53,113},
         --normal
         nch = {6,66},
-        ncs = {22,88},
+        ncs = {22,82},
         ndh = {38,98},
         nds = {54,114},
         --weakening
