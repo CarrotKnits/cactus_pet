@@ -34,7 +34,7 @@ function i_main_menu()
 	water_cd = 0
 	water_cd_max = 150
 
-	--talk_cd
+	--talk cd
 	talk_cd = 0
 	talk_cd_max = 150
 
@@ -56,7 +56,7 @@ function u_main_menu()
 		talk_cd -= 1
 	end
 
-	if wash_cd ~= 0 then
+	if wash_cd > 0 then
 		if menu.state == "wash" then
 			wash.sp = 59
 			wash.y = 39
@@ -74,7 +74,7 @@ function u_main_menu()
 		end
 	end
 
-	if talk_cd ~= 0 then
+	if talk_cd > 0 then
 		if menu.state == "talk" then
 			talk.sp = 43
 			talk.y = 39
@@ -92,7 +92,7 @@ function u_main_menu()
 		end
 	end
 
-	if water_cd ~= 0 then
+	if water_cd > 0 then
 		if menu.state == "water" then
 			water.sp = 27
 			water.y = 39
