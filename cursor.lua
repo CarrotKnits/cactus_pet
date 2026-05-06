@@ -52,31 +52,35 @@ function u_cursor_control()
 		menu.state = "talk"
 	end
 --select option
+
 	if btnp(❎) then
 		sfx(1)
-		if cursr.state == "water" then
+		if cursr.state == "water" and water_cd == 0 then
 			if pet_stats.hp < (pet_stats.maxhp - 5) then
 				pet_stats.hp += 5
 			--set heal limit
 			elseif pet_stats.hp < pet_stats.maxhp and pet_stats.hp > (pet_stats.maxhp - 5) then
 				pet_stats.hp = pet_stats.hp + (pet_stats.maxhp - pet_stats.hp)
 			end
+			water_cd = water_cd_max
 		end
-		if cursr.state == "wash" then
+		if cursr.state == "wash" and wash_cd == 0 then
 			if pet_stats.cln < (pet_stats.maxcln - 5) then
 				pet_stats.cln += 5
 			--set wash limit
 			elseif pet_stats.cln < pet_stats.maxcln and pet_stats.cln > (pet_stats.maxcln - 5) then
 				pet_stats.cln = pet_stats.cln + (pet_stats.maxcln - pet_stats.cln)
 			end
+			wash_cd = wash_cd_max
 		end
-		if cursr.state == "talk" then
+		if cursr.state == "talk" and talk_cd == 0 then
 			if pet_stats.hap < (pet_stats.maxhap - 5) then
 				pet_stats.hap += 5
 			--set talk limit
 			elseif pet_stats.hap < pet_stats.maxhap and pet_stats.hap > (pet_stats.maxhap - 5) then
 				pet_stats.hap = pet_stats.hap + (pet_stats.maxhap - pet_stats.hap)
 			end
+			talk_cd = talk_cd_max
 		end
 	end
 
