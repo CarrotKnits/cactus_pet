@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 43
 __lua__
 --cactus pet 1st project
---neat catshark
+--carrotknits
 
 #include main.lua
 #include pet.lua
