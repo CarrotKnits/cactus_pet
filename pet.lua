@@ -25,33 +25,31 @@ end
 function upet()
 	--pet animation speed
 	pi.t += 0.05
-	--hp decay speed, defaults 0.005, 0.015, 0.3; other values are for testing
+	--hp decay speed, defaults 0.005, 0.01, 0.015; other values are for testing
 	if pet_stats.hp <= 0 then
 		pet_stats.hp = 0 --stops inner bar from growing to the left outside the outer bar when at 0
 	elseif hap.state == "happy" and cln.state == "clean" then
-		pet_stats.hp -= 0.01
+		pet_stats.hp -= 0.005
 	elseif hap.state == "sad" or cln.state == "dirty" then
-		pet_stats.hp -= 0.15
+		pet_stats.hp -= 0.01
 	elseif hap.state == "sad" and cln.state == "dirty" then
-		pet_stats.hp -= 0.3
+		pet_stats.hp -= 0.015
 	end
 	--happiness decay speed: default 0.015
 	if pet_stats.hap <= 0 then
 		pet_stats.hap = 0 --stops inner bar from growing to the left outside the outer bar when at 0
 	elseif pet_stats.hap > 0 then
-		pet_stats.hap -= 0.06
+		pet_stats.hap -= 0.02
 	end
 	--cleanliness decay speed: default 0.01
 	if pet_stats.cln <= 0 then
 		pet_stats.cln = 0 --stops inner bar from growing to the left outside the outer bar when at 0
 	elseif pet_stats.cln > 0 then
-		pet_stats.cln -= 0.04
+		pet_stats.cln -= 0.025
 	end
 
 end
 
 function dpet()
 	spr(animation[pet_state_code][(flr(pi.t) % 2) + 1],24,24)
-	
-
 end    
