@@ -39,13 +39,13 @@ function upet()
 	if pet_stats.hap <= 0 then
 		pet_stats.hap = 0 --stops inner bar from growing to the left outside the outer bar when at 0
 	elseif pet_stats.hap > 0 then
-		pet_stats.hap -= 0.02
+		pet_stats.hap -= 0.01
 	end
 	--cleanliness decay speed: default 0.01
 	if pet_stats.cln <= 0 then
 		pet_stats.cln = 0 --stops inner bar from growing to the left outside the outer bar when at 0
 	elseif pet_stats.cln > 0 then
-		pet_stats.cln -= 0.025
+		pet_stats.cln -= 0.009
 	end
 
 end
