@@ -1,6 +1,8 @@
 --main program
 
 function _init()
+    game_state = "title"
+    pet_state_code = "mch"
     ipet()
     i_hp_sts()
     i_ani()
@@ -11,19 +13,17 @@ function _init()
 end
 
 function _update()
-    upet()
-    u_hp_sts()
-    u_music()
-    u_main_menu()
-    u_cursor_control()
+    if game_state == "title" then
+        u_title()
+    elseif game_state == "play" then
+        u_play()
+    end
 end
 
 function _draw()
-    cls()
-    map()
-    spr(11,24,32)
-    d_hp_sts()
-    dpet()
-    d_main_menu()
-    d_cursor_control()
+    if game_state == "title" then
+        d_title()
+    elseif game_state == "play" then
+        d_play()
+    end
 end

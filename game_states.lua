@@ -26,8 +26,8 @@ function d_title()
 end
 --play
 function u_play()
-    upet()
     u_hp_sts()
+    upet()
     u_music()
     u_main_menu()
     u_cursor_control()
@@ -35,7 +35,7 @@ end
 
 function d_play()
     cls()
-    map()
+    map(0, 0, 0, 0, 7, 7, 0)
     spr(11,24,32)
     d_hp_sts()
     dpet()
