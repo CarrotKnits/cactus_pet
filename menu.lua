@@ -32,7 +32,7 @@ function i_main_menu()
 
 	--water cd
 	water_cd = 0
-	water_cd_max = 150
+	water_cd_max = 300
 
 	--talk cd
 	talk_cd = 0
