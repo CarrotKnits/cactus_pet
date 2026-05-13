@@ -29,11 +29,11 @@ function upet()
 	if pet_stats.hp <= 0 then
 		pet_stats.hp = 0 --stops inner bar from growing to the left outside the outer bar when at 0
 	elseif hap.state == "happy" and cln.state == "clean" then
-		pet_stats.hp -= 0.005
+		pet_stats.hp -= 0.7
 	elseif hap.state == "sad" or cln.state == "dirty" then
-		pet_stats.hp -= 0.01
+		pet_stats.hp -= 0.7
 	elseif hap.state == "sad" and cln.state == "dirty" then
-		pet_stats.hp -= 0.015
+		pet_stats.hp -= 0.7
 	end
 	--happiness decay speed: default 0.015
 	if pet_stats.hap <= 0 then
