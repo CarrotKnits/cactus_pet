@@ -17,16 +17,12 @@ Goal: Keep the pet alive
 CONTROLS:
 
 'x' to select options
-
 arrow keys to move cursor
 
-
+CREDITS:
 Programming: CarrotKnits
-
 Art: CarrotKnits
-
 Sfx: CarrotKnits
-
 Music: TheNakedRaptor
 
 
@@ -35,13 +31,10 @@ TO GET STARTED:
 You can find the zip files in `cactus_pet.bin`. Choose the version for
 your system.
 
-cactus_pet_linux.zip
-
-cactus_pet_oxs.zip
-
-cactus_pet_raspi.zip
-
-cactus_pet_windows.zip
+    cactus_pet_linux.zip
+    cactus_pet_oxs.zip
+    cactus_pet_raspi.zip
+    cactus_pet_windows.zip
 
 Download and run `catus_pet.exe` to run game.
 
