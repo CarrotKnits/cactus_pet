@@ -97,7 +97,7 @@ function u_hp_sts()
 		hp_code = "dy"
 	elseif hp.state == "dead" then
 		hp_code = "dd"
-		while gameover_cd > 0 do
+		if gameover_cd > 0 then
 			gameover_cd -= 1
 			if gameover_cd == 0 then
 				game_state = "gameover"

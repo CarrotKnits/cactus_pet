@@ -1,14 +1,13 @@
 --game over
 
 function i_gameover()
-    gameover_cd = 60
-    gameover_cd_max = 60
+    gameover_cd = 15
+    gameover_cd_max = 15
 end
 
 function u_gameover()
     if btnp(❎) then
-        game_state = "play"
-        gameover_cd = gameover_cd_max
+        _init()
     end
 end
 
