@@ -129,13 +129,13 @@ function d_hp_sts()
 	rectfill(hp.tlx, hp.tly, hp.tlx + pet_stats.hp, hp.bly, hp.clr) --bar fill
 	rect(hp.tlx, hp.tly - 1, hp.blx, hp.bly + 1, 1) --bar border
 
---happiness: bug:happiness draw code is actually the cln bar??
+--happiness
 	spr(hap.sp, hap.spx, hap.spy)
 	rectfill(hap.tlx, hap.tly, hap.blx, hap.bly, 2) --bar back empty
 	rectfill(hap.tlx, hap.tly, hap.tlx + pet_stats.hap, hap.bly, hap.clr) --bar fill
 	rect(hap.tlx, hap.tly - 1, hap.blx, hap.bly + 1, 1) --bar border
 
---cleanliness: bug:cleanliness draw code is actually the happiness bar?? 
+--cleanliness
 	spr(cln.sp, cln.spx, cln.spy)
 	rectfill(cln.tlx, cln.tly, cln.blx, cln.bly, 2) --bar back empty
 	rectfill(cln.tlx, cln.tly, cln.tlx + pet_stats.cln, cln.bly, cln.clr) --bar fill
