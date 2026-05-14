@@ -3,6 +3,7 @@
 function _init()
     game_state = "title"
     pet_state_code = "mch"
+    i_gameover()
     ipet()
     i_hp_sts()
     i_ani()
@@ -17,6 +18,8 @@ function _update()
         u_title()
     elseif game_state == "play" then
         u_play()
+    elseif game_state == "gameover" then
+        u_gameover()
     end
 end
 
@@ -25,5 +28,7 @@ function _draw()
         d_title()
     elseif game_state == "play" then
         d_play()
+    elseif game_state == "gameover" then
+        d_gameover()
     end
 end

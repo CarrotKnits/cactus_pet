@@ -97,6 +97,12 @@ function u_hp_sts()
 		hp_code = "dy"
 	elseif hp.state == "dead" then
 		hp_code = "dd"
+		while gameover_cd > 0 do
+			gameover_cd -= 1
+			if gameover_cd == 0 then
+				game_state = "gameover"
+			end
+		end
 	end
 	--cleanliness state lookup
 	if cln.state == "clean" then
