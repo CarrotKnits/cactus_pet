@@ -100,6 +100,7 @@ function u_hp_sts()
 		if gameover_cd > 0 then
 			gameover_cd -= 1
 			if gameover_cd == 0 then
+				sfx(2)
 				game_state = "gameover"
 			end
 		end
