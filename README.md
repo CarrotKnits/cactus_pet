@@ -16,14 +16,15 @@ Goal: Keep the pet alive
 
 CONTROLS:
 
-'x' to select options
-arrow keys to move cursor
+    'x' to select options
+    arrow keys to move cursor
 
 CREDITS:
-Programming: CarrotKnits
-Art: CarrotKnits
-Sfx: CarrotKnits
-Music: TheNakedRaptor
+
+    Programming: CarrotKnits
+    Art: CarrotKnits
+    Sfx: CarrotKnits
+    Music: TheNakedRaptor
 
 
 TO GET STARTED:
